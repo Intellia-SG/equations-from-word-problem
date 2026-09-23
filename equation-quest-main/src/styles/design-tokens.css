@@ -1,0 +1,66 @@
+/* ════════════════════════════════════════════
+   EquationQuest Design Tokens
+   ════════════════════════════════════════════ */
+
+:root {
+  /* ── Core palette ── */
+  --color-bg: #0b0f19;
+  --color-surface: rgba(18, 24, 38, 0.75);
+  --color-primary: #f59e0b;     /* amber/gold — CTAs, active states */
+  --color-secondary: #6366f1;   /* indigo — secondary detective elements */
+  --color-accent: #10b981;      /* emerald — correct answers */
+  --color-error: #ef4444;       /* red — wrong answers */
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+
+  /* ── Aliases used across components ── */
+  --gold: #f59e0b;
+  --gold-light: #fbbf24;
+  --purple: #8b5cf6;
+  --purple-light: #a78bfa;
+  --green: #10b981;
+  --green-light: #34d399;
+  --red: #ef4444;
+  --red-light: #f87171;
+
+  /* ── Character & Mascot accents ── */
+  --char-1: #38bdf8;    /* Wei Jie (methodical) */
+  --char-2: #ec4899;    /* Deepa (intuitive) */
+  --mascot: #f97316;    /* Milo the Fox */
+
+  /* ── EquationQuest world accents (10 worlds) ── */
+  --world-0: #6C63FF;   /* The Mystery Letter — indigo */
+  --world-1: #2DD4BF;   /* The Balance Case — teal */
+  --world-2: #F5A623;   /* The Two-Step Trail — amber */
+  --world-3: #9B5DE5;   /* The Bracket Vault — purple */
+  --world-4: #F15BB5;   /* The Fraction Files — rose */
+  --world-5: #FFC53D;   /* Coins & Clues — gold */
+  --world-6: #38BDF8;   /* Ages & Alibis — sky */
+  --world-7: #22C55E;   /* Perimeter Puzzle — green */
+  --world-8: #FB6340;   /* Detective's Verdict — deep orange */
+  --world-9: #DC2626;   /* The Grand Case File — crimson */
+
+  /* ── Typography ── */
+  /* Emoji fonts are appended so glyphs (coins, notes, etc.) always render
+     via a real colour-emoji font instead of falling back to a missing
+     glyph box on platforms where Fredoka/Nunito/system-ui don't cover them. */
+  --font-display: 'Fredoka', 'Nunito', system-ui, -apple-system, 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+  --font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+  --font-emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', 'EmojiOne Color', sans-serif;
+
+  /* ── Radii ── */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.35);
+  --shadow-glow-gold: 0 0 24px rgba(255, 193, 7, 0.35);
+
+  /* ── Transitions ── */
+  --transition-fast: 0.18s ease;
+  --transition-base: 0.3s ease;
+  --transition-spring: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
