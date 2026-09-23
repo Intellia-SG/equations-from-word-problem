@@ -10,6 +10,14 @@ export const think     = (text) => ({ text, style: 'thinking' });
 export const instruct  = (text) => ({ text, style: 'instruction' });
 export const encourage = (text) => ({ text, style: 'encouragement' });
 
+// ─── INTRO & HOME SCREEN ─────────────────────────────────────────────────────
+export function homeIntroNarration() {
+  return [
+    encourage("Hi! I'm Milo the Fox. Ready to investigate cases, name the unknown, and master the balance method?")
+  ];
+}
+
+// ─── WONDER PHASE (THE MISSING MANGOES) ──────────────────────────────────────
 export function wonderNarration() {
   return [
     say("Welcome to EquationQuest! Let's investigate the case of the missing mangoes!"),
@@ -19,6 +27,7 @@ export function wonderNarration() {
   ];
 }
 
+// ─── STORY PHASE (4 PANELS) ──────────────────────────────────────────────────
 export function storyNarration(panel) {
   const scripts = [
     [
@@ -50,6 +59,7 @@ export function storyNarration(panel) {
   return scripts[panel] || scripts[0];
 }
 
+// ─── SIMULATE STATION INTROS ─────────────────────────────────────────────────
 export function simStationIntro(stationIdx) {
   const intros = [
     [
@@ -71,6 +81,30 @@ export function simStationIntro(stationIdx) {
   ];
 
   return intros[stationIdx] || intros[0];
+}
+
+// ─── 10 DISTRICTS / WORLDS INTROS ────────────────────────────────────────────
+export function worldIntroNarration(worldId) {
+  const worldLines = [
+    say("World 1: The Mystery Letter. Translate worded phrases into algebraic expressions."),
+    say("World 2: The Balance Case. Solve one-step equations with the balance method."),
+    say("World 3: The Two-Step Trail. Solve two-step equations and isolate the unknown."),
+    say("World 4: The Bracket Vault. Expand brackets and crack the vault equation!"),
+    say("World 5: The Fraction Files. Clear fractions and solve the case."),
+    say("World 6: Coins and Clues. Form and solve linear equations from money scenarios."),
+    say("World 7: Ages and Alibis. Form equations and crack the timeline alibis."),
+    say("World 8: Perimeter Puzzle. Solve geometric perimeters and consecutive integer problems."),
+    say("World 9: Detective's Verdict. Tackle multi-step applied real-world cases."),
+    say("World 10: The Grand Case File. The final showdown mixed review across all concepts!"),
+  ];
+  return [worldLines[worldId] || worldLines[0]];
+}
+
+// ─── PRACTICE / PLAY PHASE PROMPTS & FEEDBACK ────────────────────────────────
+export function practiceIntroNarration() {
+  return [
+    instruct("Welcome to Practice Mode! Investigate 10 mystery districts, crack equation clues, and defeat the district bosses!")
+  ];
 }
 
 export function playQuestionNarration(questionText) {
@@ -113,6 +147,13 @@ export function districtCompleteNarration() {
   ];
 }
 
+export function practiceCompleteNarration() {
+  return [
+    cheer("Practice Phase Complete! Outstanding work investigating all 10 districts! Proceed to the Reflect Phase!")
+  ];
+}
+
+// ─── BOSS BATTLES ────────────────────────────────────────────────────────────
 export function bossStartNarration() {
   return [
     emphasize("The Boss Battle begins! Crack the suspect's puzzles to claim your detective badge!")
@@ -125,10 +166,26 @@ export function bossWinNarration() {
   ];
 }
 
+export function bossLoseNarration() {
+  return [
+    encourage("Out of lives! Review the balance rules and challenge the boss again!")
+  ];
+}
+
+// ─── REFLECT PHASE ───────────────────────────────────────────────────────────
 export function reflectNarration() {
   return [
     say("Welcome to the Reflect Phase! Let's review the key algebra rules and check your Chief Detective scorecard! 📓")
   ];
+}
+
+export function reflectReviewNarration(qIdx) {
+  const reviews = [
+    instruct("Question 1: When expanding a bracket preceded by a minus sign, the negative sign distributes to every term inside the bracket."),
+    instruct("Question 2: When solving an equation with a fraction, either isolate the fraction first, or multiply every term on both sides by the denominator."),
+    instruct("Question 3: The fundamental principle of the balance method: whatever operation you perform on one side of the equals sign, you must do to the other side."),
+  ];
+  return [reviews[qIdx] || reviews[0]];
 }
 
 export function reflectCompleteNarration() {

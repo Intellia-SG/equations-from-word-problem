@@ -14,6 +14,8 @@ import {
   playHint1Narration,
   playHint2Narration,
   districtCompleteNarration,
+  worldIntroNarration,
+  practiceCompleteNarration,
 } from '../../utils/narration.js';
 
 export default function PlayPhase({ state, dispatch }) {
@@ -128,9 +130,20 @@ export default function PlayPhase({ state, dispatch }) {
     advanceQuestion();
   }
 
+  useEffect(() => {
+    if (isPlayDone || (qIdx >= 100 && !showMap)) {
+      narrate(practiceCompleteNarration());
+    }
+  }, [isPlayDone, qIdx, showMap, narrate]);
+
   function startDistrict(idx) {
     setShowMap(false);
-    setTimeout(() => narrate(playQuestionNarration(qs[idx * 10]?.questionText || '')), 400);
+    setTimeout(() => {
+      narrate([
+        ...worldIntroNarration(idx),
+        ...playQuestionNarration(qs[idx * 10]?.questionText || '')
+      ]);
+    }, 400);
   }
 
   // Play done screen

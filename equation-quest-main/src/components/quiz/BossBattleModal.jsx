@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './BossBattleModal.css';
 import QuestionRenderer from './QuestionRenderer.jsx';
 import { useAudio } from '../../hooks/useAudio.js';
-import { bossStartNarration, bossWinNarration } from '../../utils/narration.js';
+import { bossStartNarration, bossWinNarration, bossLoseNarration } from '../../utils/narration.js';
 
 export default function BossBattleModal({ boss, questions, onWin, onClose, audioEnabled }) {
   const { narrate, sounds } = useAudio(audioEnabled);
@@ -38,6 +38,7 @@ export default function BossBattleModal({ boss, questions, onWin, onClose, audio
       if (nextLives <= 0) {
         setLost(true);
         sounds.defeat();
+        narrate(bossLoseNarration());
       }
     }
   }

@@ -4,6 +4,9 @@ import './IntroScreen.css';
 import { generateSessionQuestions } from '../utils/shuffle.js';
 import questionBank from '../data/questionBank.js';
 
+import { useAudio } from '../hooks/useAudio.js';
+import { homeIntroNarration } from '../utils/narration.js';
+
 const JOURNEY = [
   { num: '01', icon: '🔍', label: 'Wonder',   desc: 'The Missing Number' },
   { num: '02', icon: '📖', label: 'Story',    desc: 'Wei Jie & Deepa\'s Case' },
@@ -13,15 +16,23 @@ const JOURNEY = [
 ];
 
 export default function IntroScreen({ state, dispatch }) {
+  const { narrate, stopAll } = useAudio(state?.audioEnabled ?? true);
   const hasSaved = state?.phaseComplete && Object.values(state.phaseComplete).some(Boolean);
 
   function startFresh() {
+    stopAll();
     dispatch({ type: 'LOAD_QUESTIONS', payload: generateSessionQuestions(questionBank) });
     dispatch({ type: 'SET_PHASE', payload: 'wonder' });
   }
 
   function resumeSession() {
+    stopAll();
     dispatch({ type: 'SET_PHASE', payload: state.savedPhase || 'wonder' });
+  }
+
+  function speakMilo() {
+    stopAll();
+    narrate(homeIntroNarration());
   }
 
   return (
@@ -38,10 +49,18 @@ export default function IntroScreen({ state, dispatch }) {
       <h2 className="intro-subtitle">EquationQuest · Master Linear Equations, Balancing &amp; Word Problems</h2>
 
       {/* Mascot Row */}
-      <div className="intro-mascot-row">
+      <div
+        className="intro-mascot-row"
+        onClick={speakMilo}
+        style={{ cursor: 'pointer' }}
+        title="Click to hear Milo speak! 🎙️"
+        role="button"
+        tabIndex={0}
+      >
         <div className="intro-mascot-circle">🦊</div>
         <div className="intro-speech-bubble">
           Hi! I'm Milo the Fox. Ready to investigate cases,<br />name the unknown, and master the balance method? 🔍⚖️
+          <span style={{ marginLeft: '8px', fontSize: '0.9rem', opacity: 0.8 }}>🔊</span>
         </div>
       </div>
 

@@ -4,8 +4,7 @@ import './ReflectPhase.css';
 import Mascot from '../shared/Mascot.jsx';
 import { BADGES } from '../../utils/badgeEngine.js';
 import { calcStars } from '../../utils/scoring.js';
-import { useAudio } from '../../hooks/useAudio.js';
-import { reflectNarration, reflectCompleteNarration } from '../../utils/narration.js';
+import { reflectNarration, reflectReviewNarration, reflectCompleteNarration } from '../../utils/narration.js';
 import { generateSessionQuestions } from '../../utils/shuffle.js';
 import questionBank from '../../data/questionBank.js';
 
