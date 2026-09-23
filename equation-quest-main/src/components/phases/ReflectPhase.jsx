@@ -11,29 +11,29 @@ import questionBank from '../../data/questionBank.js';
 
 const REFLECT_QUESTIONS = [
   {
-    q: "1. How many cents are in a one-dollar ($1.00) coin?",
+    q: "1. When expanding a bracket preceded by a minus sign, such as −(x + 5), what is the correct result?",
     options: [
-      "100 cents",
-      "50 cents",
-      "10 cents",
+      "−x − 5  (the negative sign distributes to both terms)",
+      "−x + 5  (only the first term changes sign)",
+      "x − 5  (the negative sign disappears)",
     ],
     correct: 0,
   },
   {
-    q: "2. Oliver pays with a $1.00 coin for an 85¢ muffin. How is his change calculated?",
+    q: "2. When solving an equation with a fraction such as x/3 + 4 = 10, how should you clear the fraction?",
     options: [
-      "Amount Paid − Price = $1.00 − 85¢ = 15¢",
-      "Add both numbers: $1.00 + 85¢ = $1.85",
-      "Change is always a fixed 50¢",
+      "Either isolate the fraction first (x/3 = 6 ➔ x = 18), or multiply EVERY term on both sides by 3",
+      "Multiply only the number 10 on the right side by 3",
+      "Subtract 3 from both sides without multiplying",
     ],
     correct: 0,
   },
   {
-    q: "3. What is the golden rule when adding prices in dollars and cents?",
+    q: "3. What is the fundamental principle of the Balance Method in algebra?",
     options: [
-      "Keep dollars with dollars and cents with cents",
-      "Ignore the decimal points completely",
-      "Always subtract the smaller number",
+      "Whatever operation you perform on one side of the equals sign, you must do to the other side",
+      "Always move the variable x to the right-hand side",
+      "Only subtract numbers, never divide or multiply",
     ],
     correct: 0,
   },
@@ -85,10 +85,10 @@ export default function ReflectPhase({ state, dispatch }) {
     return (
       <div className="reflect-wrap">
         <div className="trophy-card glass-card anim-bounce-in">
-          <div className="trophy-icon">🏆</div>
-          <h1 className="trophy-title headline">You're a Money Grand Master!</h1>
+          <div className="trophy-icon">🏅</div>
+          <h1 className="trophy-title headline">You're a Chief Detective!</h1>
           <p className="trophy-sub subheadline" style={{ color: 'var(--gold)' }}>
-            Money, Coins &amp; Change Mastery Complete ✅
+            Linear Equations &amp; Word Problems Mastery Complete ✅
           </p>
 
           {/* Stats Breakdown */}
@@ -153,16 +153,16 @@ export default function ReflectPhase({ state, dispatch }) {
     <div className="reflect-wrap">
       <div className="reflect-card glass-card anim-slide-up">
         <div className="reflect-header">
-          <span className="reflect-badge">📓 Learning Reflection &amp; Scorecard</span>
-          <h2 className="reflect-title subheadline">Reflect on Your Money Journey</h2>
+          <span className="reflect-badge">📓 Case Reflection &amp; Scorecard</span>
+          <h2 className="reflect-title subheadline">Reflect on Your EquationQuest Journey</h2>
         </div>
 
-        <Mascot mood="curious" message="Let's check your key takeaways and review your scorecard!" size="sm" />
+        <Mascot mood="curious" message="Let's review the key algebra rules and check your official scorecard!" size="sm" />
 
         {/* Self-assessment Concept Check */}
         <div className="reflect-quiz-container">
           <p className="body-text" style={{ color: 'var(--gold)', fontWeight: 800 }}>
-            🧠 Money Concept Reflection Check:
+            🧠 Core Concept Reflection Check:
           </p>
           {REFLECT_QUESTIONS.map((qObj, qIdx) => (
             <div key={qIdx} className="reflect-q-item">
@@ -175,7 +175,7 @@ export default function ReflectPhase({ state, dispatch }) {
                       key={oIdx}
                       className={`option-btn ${isSelected ? 'selected' : ''}`}
                       onClick={() => handleSelectOption(qIdx, oIdx)}
-                      style={{ textAlign: 'left', minHeight: '44px', fontSize: '1rem', padding: '10px 14px' }}
+                      style={{ textAlign: 'left', minHeight: '44px', fontSize: '0.96rem', padding: '10px 14px' }}
                     >
                       <span>{opt}</span>
                     </button>
@@ -189,12 +189,12 @@ export default function ReflectPhase({ state, dispatch }) {
         {/* Journal Entry */}
         <div className="reflect-journal">
           <label className="reflect-label body-text" htmlFor="journal-input">
-            Write one key money rule or fact you mastered:
+            Write one key algebra rule or case insight you mastered:
           </label>
           <textarea
             id="journal-input"
             className="reflect-textarea"
-            placeholder="e.g. 100 cents = $1.00, and Change = Amount Paid − Price!"
+            placeholder="e.g. Always perform the exact same inverse operation on both sides, and verify by substitution!"
             value={journal}
             onChange={e => setJournal(e.target.value)}
             rows={2}
@@ -204,9 +204,9 @@ export default function ReflectPhase({ state, dispatch }) {
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '6px' }}>
             <span style={{ fontSize: '0.8rem', color: '#a0a0b8', alignSelf: 'center' }}>Quick insert:</span>
             {[
-              '100 cents = $1.00',
-              'Change = Amount Paid − Price',
-              'Keep cents with cents and dollars with dollars',
+              'Whatever you do to one side, do to the other side',
+              'Let x = the unknown quantity first',
+              'Always verify by substitution into the original clue',
             ].map(ex => (
               <button
                 key={ex}
@@ -229,7 +229,7 @@ export default function ReflectPhase({ state, dispatch }) {
 
         <div className="reflect-actions">
           <button className="btn btn-primary btn-lg" onClick={handleSubmit}>
-            🌟 Submit Reflection &amp; View Trophy Scorecard!
+            🌟 Submit Reflection &amp; View Chief Detective Scorecard!
           </button>
         </div>
       </div>

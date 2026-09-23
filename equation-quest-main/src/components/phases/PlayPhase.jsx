@@ -160,10 +160,10 @@ export default function PlayPhase({ state, dispatch }) {
     return (
       <div className="play-map-wrap">
         <div className="play-map-card glass-card">
-          <h2 className="play-map-title subheadline">🗺️ Money Worlds Kingdom</h2>
+          <h2 className="play-map-title subheadline">🗺️ Equation Worlds Kingdom</h2>
           <p className="body-text" style={{ color: 'var(--text-secondary)', textAlign: 'center' }}>
             {isAllDone ? (
-              <strong style={{ color: 'var(--gold)' }}>All 10 Money Worlds Complete!</strong>
+              <strong style={{ color: 'var(--gold)' }}>All 10 Equation Worlds Complete!</strong>
             ) : (
               <>World {distIdx + 1}: <strong style={{ color: 'var(--gold)' }}>{district.name}</strong></>
             )}
@@ -208,7 +208,7 @@ export default function PlayPhase({ state, dispatch }) {
             questions={qs.slice(distIdx * 10, distIdx * 10 + 5)}
             onWin={() => {
               setShowBoss(false);
-              dispatch({ type: 'UNLOCK_BADGE', payload: 'boss_slayer' });
+              dispatch({ type: 'UNLOCK_BADGE', payload: 'suspect_cracked' });
             }}
             onClose={() => setShowBoss(false)}
             audioEnabled={state?.audioEnabled}
@@ -278,7 +278,7 @@ export default function PlayPhase({ state, dispatch }) {
           questions={qs.slice(distIdx * 10, distIdx * 10 + 5)}
           onWin={() => {
             setShowBoss(false);
-            dispatch({ type: 'UNLOCK_BADGE', payload: 'boss_slayer' });
+            dispatch({ type: 'UNLOCK_BADGE', payload: 'suspect_cracked' });
           }}
           onClose={() => setShowBoss(false)}
           audioEnabled={state?.audioEnabled}

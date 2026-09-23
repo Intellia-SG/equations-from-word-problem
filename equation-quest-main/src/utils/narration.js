@@ -1,6 +1,6 @@
 // src/utils/narration.js
-// Narration script builder for MoneyQuest
-// Strictly matches on-screen text 1:1
+// Narration script builder for EquationQuest (Grade 7 / Secondary 1 Mathematics)
+// Strictly matches on-screen text 1:1 and obeys PRD §11 pronunciation rules.
 
 export const say       = (text) => ({ text, style: 'statement' });
 export const ask       = (text) => ({ text, style: 'question' });
@@ -12,40 +12,38 @@ export const encourage = (text) => ({ text, style: 'encouragement' });
 
 export function wonderNarration() {
   return [
-    say("Welcome to MoneyQuest! Let's investigate the big money mystery!"),
-    say("If Oliver has a shiny two-dollar coin, three twenty-cent coins, and one ten-cent coin… that makes two dollars and seventy cents in total."),
-    ask("Can he buy an eighty-five cent muffin and a fifty-cent pencil, and how much change will he get back?"),
-    cheer("Let's investigate how counting coins and making change works!"),
+    say("Welcome to EquationQuest! Let's investigate the case of the missing mangoes!"),
+    say("A shopkeeper counted his mangoes this morning. 18 mangoes were sold today, leaving 14 left in the crate."),
+    ask("Can you help Detective HQ find the missing number, and solve for x?"),
+    cheer("Every mystery has an unknown quantity. In algebra, we call it x! Let's crack this case together!"),
   ];
 }
 
 export function storyNarration(panel) {
   const scripts = [
     [
-      say("Oliver had been saving up all week by helping with chores at home."),
-      say("On Saturday morning, his mum smiled and handed him some pocket money — a shiny two-dollar coin, three twenty-cent coins, and one ten-cent coin."),
-      think("How much money do I have altogether? Oliver wondered, spreading the coins out on the table."),
-      say("He carefully added them up: two dollars, then sixty cents, then ten cents more."),
-      cheer("I have two dollars and seventy cents! he cheered proudly."),
+      say("At Detective HQ, junior investigators Wei Jie and Deepa received their very first official case assignment."),
+      say("A local fruit shopkeeper had a dilemma: I started with a full crate of fresh mangoes. We sold 18 mangoes today, and now exactly 14 are left in the crate. But I forgot my opening count!"),
+      think("In primary school, we used bar models. But in Secondary 1, we have a far more powerful tool: algebra!"),
+      cheer("Let's track down the missing number!"),
     ],
     [
-      say("At the school market, Oliver's eyes went wide at all the stalls."),
-      say("He spotted a delicious-looking muffin with a price tag that read eighty-five cents."),
-      ask("Do I have enough money to buy it? he asked nervously."),
-      say("Emma, who was helping at the stall, grinned. It's simple! Your twenty-cent coins and ten-cent coin make seventy cents. You need eighty-five cents, so you need fifteen cents more."),
-      cheer("You have two dollars and seventy cents in total, so you definitely have enough!"),
+      say("Milo the Fox, Chief Mentor at Detective HQ, adjusted his deerstalker hat and tapped the chalkboard."),
+      instruct("Rule number one of algebra detective work: always name your unknown first! Write: Let x equal the number of mangoes the shopkeeper started with."),
+      say("Now we translate the crime scene clue into math: starting with x mangoes and losing 18 means x minus 18."),
+      cheer("Spot on, Deepa. x minus 18 is our algebraic expression!"),
     ],
     [
-      say("Oliver decided to buy the muffin. He handed over his one-dollar coin."),
-      say("Emma smiled and opened the till. Your muffin costs eighty-five cents, and you gave me one dollar. So I need to give you back the difference!"),
-      say("She counted carefully and placed one ten-cent coin and one five-cent coin into Oliver's palm."),
-      cheer("That's fifteen cents change! Penny the Piggy Bank bounced excitedly. Change is the money you get back when you pay MORE than the price! One dollar minus eighty-five cents equals fifteen cents."),
+      say("Milo brought out a polished brass balance scale."),
+      instruct("An equation is like a level scale: both sides must stay perfectly balanced at all times. Since x minus 18 equals 14, the two pans are equal: x minus 18 equals 14."),
+      say("Whatever you do to one side of the equals sign, you must do to the exact other side!"),
+      cheer("If we add 18 to the left side, we must also add 18 to the right side to keep the balance level."),
     ],
     [
-      say("By the end of the market day, Oliver had bought a muffin for eighty-five cents, a pencil for fifty cents, and a sticker pack for one dollar and twenty cents."),
-      say("He spent two dollars and fifty-five cents in total! Starting with two dollars and seventy cents, he had fifteen cents left over."),
-      say("I can add and subtract money just like regular numbers, Oliver said happily."),
-      cheer("Emma high-fived him. You're a money master now, Oliver! Penny jingled with joy."),
+      say("Together, the pair performed the balanced operation: x minus 18 plus 18 equals 14 plus 18, which cleanly gave x equals 32!"),
+      think("A master detective always checks by substitution. 32 minus 18 equals 14. It matched perfectly!"),
+      say("The shopkeeper started with exactly 32 mangoes, announced Wei Jie proudly."),
+      cheer("Chief Milo stamped the dossier: Case Closed!"),
     ],
   ];
 
@@ -55,20 +53,20 @@ export function storyNarration(panel) {
 export function simStationIntro(stationIdx) {
   const intros = [
     [
-      instruct("Welcome to Station A — Coin Counter and Register Lab!"),
-      instruct("Tap the coins in the tray to build the exact target amount shown. Tap any coin in your purse to remove it. Try using the fewest coins possible!"),
+      instruct("Welcome to Station A — The Balance Scale Lab!"),
+      instruct("Explore how operations tip the balance scale. Perform inverse operations on both pans to isolate x while keeping the scale level!"),
     ],
     [
-      instruct("Welcome to Station B — Supermarket Scanner and Price Matcher!"),
-      instruct("Scan items on the market conveyor, see the prices print on your receipt, and solve the shopping budget challenges!"),
+      instruct("Welcome to Station B — The Combination Safe!"),
+      instruct("Slide and step the variable x to evaluate the expression in real time and hit the target safe code!"),
     ],
     [
-      instruct("Welcome to Station C — The Cashier Change Maker!"),
-      instruct("You are the shopkeeper! A customer buys an item and pays with a larger coin or note. Calculate the change and dispense the exact coins from the till drawer!"),
+      instruct("Welcome to Station C — Build the Case File!"),
+      instruct("Drag and slot clue chunks to translate real-world mystery scenarios into linear equations, then solve for x!"),
     ],
     [
-      instruct("Welcome to Station D — Receipt Detective!"),
-      instruct("Detective Penny has found receipts with change calculation errors. Inspect the receipt, spot the mistake, and fix the amount!"),
+      instruct("Welcome to Station D — Spot the Fake Clue!"),
+      instruct("Inspect suspect worked solutions, spot the seeded algebraic mistake, and supply the correct mathematical fix!"),
     ],
   ];
 
@@ -83,58 +81,58 @@ export function playQuestionNarration(questionText) {
 
 export function playCorrectNarration(streak = 1) {
   if (streak >= 5) {
-    return [cheer("Incredible streak! You are unstoppable! 🔥")];
+    return [cheer("Incredible detective streak! You are cracking every case! 🔥")];
   }
   if (streak >= 3) {
-    return [cheer("Awesome! Three in a row! ⭐")];
+    return [cheer("Awesome! Three clues solved in a row! ⭐")];
   }
   return [cheer("Spot on! That's correct! 🎉")];
 }
 
 export function playWrongNarration() {
   return [
-    think("Not quite — check the hint, count the coins carefully, and try again! 💡")
+    think("Not quite — inspect the clue, check your balance method steps, and try again! 💡")
   ];
 }
 
 export function playHint1Narration() {
   return [
-    encourage("Here's your first hint! Look at the biggest coins or dollars first.")
+    encourage("Here's your first clue! Start by naming the unknown and isolating the term with x.")
   ];
 }
 
 export function playHint2Narration() {
   return [
-    encourage("Here's your final clue! Break down the dollars and cents step by step.")
+    encourage("Here's your final clue! Perform the exact inverse operation on both sides to find x.")
   ];
 }
 
 export function districtCompleteNarration() {
   return [
-    cheer("World Complete! Spectacular job on this money district! 🌟")
+    cheer("World Complete! Spectacular detective work on this case file! 🌟")
   ];
 }
 
 export function bossStartNarration() {
   return [
-    emphasize("The Boss Battle begins! Answer correctly to defeat the boss and claim your badge!")
+    emphasize("The Boss Battle begins! Crack the suspect's puzzles to claim your detective badge!")
   ];
 }
 
 export function bossWinNarration() {
   return [
-    cheer("Victory! You defeated the boss and claimed the World Badge! 👑")
+    cheer("Victory! You cracked the case and defeated the boss! 👑")
   ];
 }
 
 export function reflectNarration() {
   return [
-    say("Welcome to the Reflect Phase! Let's review the key money concepts and check your scorecard! 📓")
+    say("Welcome to the Reflect Phase! Let's review the key algebra rules and check your Chief Detective scorecard! 📓")
   ];
 }
 
 export function reflectCompleteNarration() {
   return [
-    cheer("Outstanding! You have mastered money, coins, notes, and making change! You are a true Money Master! 🏆")
+    cheer("Outstanding! You have mastered forming and solving linear equations! You are a true Chief Detective! 🏅")
   ];
 }

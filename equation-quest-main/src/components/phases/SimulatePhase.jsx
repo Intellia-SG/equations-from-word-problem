@@ -1,18 +1,18 @@
 // src/components/phases/SimulatePhase.jsx
 import React, { useEffect, useRef } from 'react';
 import './SimulatePhase.css';
-import CoinRegisterStation from '../simulations/CoinRegisterStation.jsx';
-import PriceScannerStation from '../simulations/PriceScannerStation.jsx';
-import ChangeMakerStation from '../simulations/ChangeMakerStation.jsx';
-import ReceiptDetectiveStation from '../simulations/ReceiptDetectiveStation.jsx';
+import BalanceScaleLab from '../simulations/BalanceScaleLab.jsx';
+import CrackTheCombination from '../simulations/CrackTheCombination.jsx';
+import BuildTheCaseFile from '../simulations/BuildTheCaseFile.jsx';
+import SpotTheFakeClue from '../simulations/SpotTheFakeClue.jsx';
 import { useAudio } from '../../hooks/useAudio.js';
 import { simStationIntro } from '../../utils/narration.js';
 
 const STATIONS = [
-  { id: 0, label: 'A', name: 'Coin Register',     icon: '🪙', desc: 'Build exact target amounts' },
-  { id: 1, label: 'B', name: 'Market Scanner',    icon: '🛒', desc: 'Scan items & calculate totals' },
-  { id: 2, label: 'C', name: 'Change Maker',      icon: '🔄', desc: 'Calculate & dispense change' },
-  { id: 3, label: 'D', name: 'Receipt Detective', icon: '🔍', desc: 'Spot & fix receipt errors' },
+  { id: 0, label: 'A', name: 'The Balance Scale',    icon: '⚖️', desc: 'Master the balance method' },
+  { id: 1, label: 'B', name: 'Combination Safe',     icon: '🔓', desc: 'Build-to-target equation cracker' },
+  { id: 2, label: 'C', name: 'Build Case File',      icon: '📁', desc: 'Assemble & solve multi-step problems' },
+  { id: 3, label: 'D', name: 'Spot Fake Clue',       icon: '🔍', desc: 'Identify & fix algebraic slips' },
 ];
 
 export default function SimulatePhase({ state, dispatch }) {
@@ -84,10 +84,10 @@ export default function SimulatePhase({ state, dispatch }) {
 
         {/* Station Content Area */}
         <div className="sim-station-area" role="tabpanel" key={s}>
-          {s === 0 && <CoinRegisterStation onComplete={() => handleStationComplete(0)} audioEnabled={state?.audioEnabled} />}
-          {s === 1 && <PriceScannerStation onComplete={() => handleStationComplete(1)} audioEnabled={state?.audioEnabled} />}
-          {s === 2 && <ChangeMakerStation onComplete={() => handleStationComplete(2)} audioEnabled={state?.audioEnabled} />}
-          {s === 3 && <ReceiptDetectiveStation onComplete={() => handleStationComplete(3)} audioEnabled={state?.audioEnabled} />}
+          {s === 0 && <BalanceScaleLab onComplete={() => handleStationComplete(0)} audioEnabled={state?.audioEnabled} />}
+          {s === 1 && <CrackTheCombination onComplete={() => handleStationComplete(1)} audioEnabled={state?.audioEnabled} />}
+          {s === 2 && <BuildTheCaseFile onComplete={() => handleStationComplete(2)} audioEnabled={state?.audioEnabled} />}
+          {s === 3 && <SpotTheFakeClue onComplete={() => handleStationComplete(3)} audioEnabled={state?.audioEnabled} />}
         </div>
 
         {/* Footer Navigation */}

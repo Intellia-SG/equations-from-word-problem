@@ -1,16 +1,59 @@
-# React + Vite
+# EquationQuest — Grade 7 Mathematics
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Topic:** Equations from Word Problems  
+**Curriculum Standards:** Singapore MOE Secondary 1 Mathematics — *Number and Algebra* strand (Linear Equations in One Variable).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 1. Module Overview
+EquationQuest teaches students to translate real-world scenarios into linear equations in one variable and to solve those equations using the **balance method** — including equations with brackets, fractions, and multi-step applied word problems (money, age, perimeter, consecutive integers).
 
-## React Compiler
+The learning journey is framed as an investigative detective mystery: every world is a "case," the unknown quantity is "the missing number," and the student plays a junior detective alongside **Wei Jie**, **Deepa**, and mentor **Milo the Fox 🦊**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 2. Five-Phase Pedagogy
+1. **Wonder:** The Case of the Missing Mangoes (`x − 18 = 14`).
+2. **Story:** 4 comic panels introducing the unknown, the balance method rule, and substitution verification.
+3. **Simulate:** 4 interactive forensics labs:
+   - **Station A (The Balance Scale Lab):** Concept Discovery Lab with a dynamic SVG scale and operation controls.
+   - **Station B (Crack the Combination Safe):** Build-to-Target Challenge manipulating the value of $x$.
+   - **Station C (Build the Case File):** Composite Construction assembling and solving equations from clues.
+   - **Station D (Spot the Fake Clue):** Error-Detective identifying and fixing seeded algebraic slips.
+4. **Practice (Play):** 10 Themed Worlds × 10 Questions = 100 questions with 10 World Boss Battles.
+5. **Reflect:** Core concept check, student journal reflection, and Chief Detective certificate scorecard.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## 3. Story Panel Art Brief (PRD §13)
+The module includes 4 custom-illustrated story panels in `src/assets/story/`:
+1. `1.png`: Detective HQ office, Wei Jie and Deepa receiving the mango case dossier from the fruit shopkeeper.
+2. `2.png`: Milo the Fox coaching the pair on naming the unknown first (`Let x = the unknown`).
+3. `3.png`: A polished golden balance scale demonstrating the balance method rule.
+4. `4.png`: The pair celebrating cracking the case, verifying $32 - 18 = 14$, with Milo stamping "CASE CLOSED".
+
+---
+
+## 4. Audio Pipeline
+Uses ElevenLabs (Alice voice profile, `eleven_multilingual_v2`) for narration:
+- Pronunciation rules: letter "ex", "equals", "over" for fractions, "the quantity ...", and full word spelling.
+- Offline pre-generation: `npm run generate-audio`
+- Orphan audio cleanup: `npm run clean-audio`
+- Automated question bank stress test: `npm run test:bank`
+
+---
+
+## 5. Development & Build
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Run 30,000-question QA stress test
+npm run test:bank
+
+# Build for production
+npm run build
+```
