@@ -29,6 +29,16 @@
   box-sizing: border-box;
 }
 
+.phase-content.is-intro {
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ─── Header & Navigation ────────────────────────────────────────────────── */
 .app-header {
   position: fixed;

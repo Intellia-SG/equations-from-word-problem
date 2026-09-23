@@ -55,57 +55,34 @@ export default function IntroScreen({ state, dispatch }) {
         <div className="journey-card-title">YOUR LEARNING JOURNEY · CLICK ANY PHASE TO START</div>
 
         <div className="journey-steps-container">
-          <div className="journey-row top-row">
-            {JOURNEY.slice(0, 3).map((j, i) => (
-              <React.Fragment key={j.num}>
-                <div
-                  className="journey-step-item clickable-step"
-                  onClick={() => dispatch({ type: 'SET_PHASE', payload: j.label.toLowerCase() === 'practice' ? 'play' : j.label.toLowerCase() })}
-                  role="button"
-                  tabIndex={0}
-                  title={`Click to open ${j.label} phase`}
-                >
-                  <span className="journey-icon-circle">{j.icon}</span>
-                  <div className="journey-text-col">
-                    <span className="journey-item-title">{j.label}</span>
-                    <span className="journey-item-desc">{j.desc}</span>
-                  </div>
+          {JOURNEY.map((j, i) => (
+            <React.Fragment key={j.num}>
+              <div
+                className="journey-step-item clickable-step"
+                onClick={() => dispatch({ type: 'SET_PHASE', payload: j.label.toLowerCase() === 'practice' ? 'play' : j.label.toLowerCase() })}
+                role="button"
+                tabIndex={0}
+                title={`Click to open ${j.label} phase`}
+              >
+                <span className="journey-icon-circle">{j.icon}</span>
+                <div className="journey-text-col">
+                  <span className="journey-item-title">{j.label}</span>
+                  <span className="journey-item-desc">{j.desc}</span>
                 </div>
-                <span className={`journey-arrow ${i === 2 ? 'fade-arrow' : ''}`}>→</span>
-              </React.Fragment>
-            ))}
-          </div>
-
-          <div className="journey-row bottom-row">
-            {JOURNEY.slice(3, 5).map((j, i) => (
-              <React.Fragment key={j.num}>
-                <div
-                  className="journey-step-item clickable-step"
-                  onClick={() => dispatch({ type: 'SET_PHASE', payload: j.label.toLowerCase() === 'practice' ? 'play' : j.label.toLowerCase() })}
-                  role="button"
-                  tabIndex={0}
-                  title={`Click to open ${j.label} phase`}
-                >
-                  <span className="journey-icon-circle">{j.icon}</span>
-                  <div className="journey-text-col">
-                    <span className="journey-item-title">{j.label}</span>
-                    <span className="journey-item-desc">{j.desc}</span>
-                  </div>
-                </div>
-                {i === 0 && <span className="journey-arrow">→</span>}
-              </React.Fragment>
-            ))}
-          </div>
+              </div>
+              {i < JOURNEY.length - 1 && <span className="journey-arrow">→</span>}
+            </React.Fragment>
+          ))}
         </div>
       </div>
 
       {/* Actions */}
       <div className="intro-ctas">
-        <button className="btn btn-primary btn-lg intro-cta-main" onClick={startFresh}>
+        <button className="btn btn-primary intro-cta-main" onClick={startFresh}>
           🚀 Begin Investigation!
         </button>
         {hasSaved && (
-          <button className="btn btn-outline" onClick={resumeSession} style={{ marginTop: '10px' }}>
+          <button className="btn btn-outline" onClick={resumeSession}>
             ↩ Resume Session
           </button>
         )}
@@ -114,16 +91,16 @@ export default function IntroScreen({ state, dispatch }) {
       {/* Bottom Cards */}
       <div className="intro-bottom-cards">
         <div className="bottom-card">
-          <div className="bottom-card-icon" style={{ color: '#ff6b6b' }}>🎯</div>
-          <div>100 Questions</div>
+          <span className="bottom-card-icon" style={{ color: '#ff6b6b' }}>🎯</span>
+          <span className="bottom-card-text">100 Questions</span>
         </div>
         <div className="bottom-card">
-          <div className="bottom-card-icon" style={{ color: '#feca57' }}>⚖️</div>
-          <div>Balance Method</div>
+          <span className="bottom-card-icon" style={{ color: '#feca57' }}>⚖️</span>
+          <span className="bottom-card-text">Balance Method</span>
         </div>
         <div className="bottom-card">
-          <div className="bottom-card-icon" style={{ color: '#66bb6a' }}>✨</div>
-          <div>Badges &amp; XP</div>
+          <span className="bottom-card-icon" style={{ color: '#66bb6a' }}>✨</span>
+          <span className="bottom-card-text">Badges &amp; XP</span>
         </div>
       </div>
     </div>

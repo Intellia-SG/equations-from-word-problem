@@ -173,9 +173,8 @@ export default function ReflectPhase({ state, dispatch }) {
                   return (
                     <button
                       key={oIdx}
-                      className={`option-btn ${isSelected ? 'selected' : ''}`}
+                      className={`reflect-opt-btn ${isSelected ? 'selected' : ''}`}
                       onClick={() => handleSelectOption(qIdx, oIdx)}
-                      style={{ textAlign: 'left', minHeight: '44px', fontSize: '0.96rem', padding: '10px 14px' }}
                     >
                       <span>{opt}</span>
                     </button>

@@ -126,7 +126,7 @@ svg {
 }
 
 .btn:active:not(:disabled) {
-  transform: translateY(0);
+  transform: scale(0.97);
 }
 
 .btn:disabled {
@@ -162,7 +162,7 @@ svg {
   background: linear-gradient(180deg, #fcd34d 0%, #fbbf24 100%);
 }
 .btn-primary:active:not(:disabled) {
-  transform: translateY(0);
+  transform: scale(0.97);
   box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
 }
 .btn-primary:disabled {
@@ -200,7 +200,7 @@ svg {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .btn-outline:active:not(:disabled) {
-  transform: translateY(0);
+  transform: scale(0.97);
 }
 .btn-outline:disabled {
   opacity: 0.35;
@@ -237,7 +237,7 @@ svg {
   background: linear-gradient(180deg, #4ade80 0%, #22c55e 100%);
 }
 .btn-green:active:not(:disabled) {
-  transform: translateY(0);
+  transform: scale(0.97);
 }
 
 /* 4. Secondary / Gold Button */
