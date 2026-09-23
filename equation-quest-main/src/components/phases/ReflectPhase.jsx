@@ -4,6 +4,7 @@ import './ReflectPhase.css';
 import Mascot from '../shared/Mascot.jsx';
 import { BADGES } from '../../utils/badgeEngine.js';
 import { calcStars } from '../../utils/scoring.js';
+import { useAudio } from '../../hooks/useAudio.js';
 import { reflectNarration, reflectReviewNarration, reflectCompleteNarration } from '../../utils/narration.js';
 import { generateSessionQuestions } from '../../utils/shuffle.js';
 import questionBank from '../../data/questionBank.js';
@@ -63,6 +64,9 @@ export default function ReflectPhase({ state, dispatch }) {
   function handleSelectOption(qIdx, optIdx) {
     sounds.click();
     setAnswers(prev => ({ ...prev, [qIdx]: optIdx }));
+    if (optIdx === 0) {
+      narrate(reflectReviewNarration(qIdx));
+    }
   }
 
   function handleSubmit() {
