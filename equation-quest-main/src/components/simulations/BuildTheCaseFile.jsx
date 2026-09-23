@@ -216,7 +216,7 @@ export default function BuildTheCaseFile({ onComplete, audioEnabled }) {
                     <button
                       key={opt}
                       type="button"
-                      className={`btn-sm ${placedSlots[sIdx] === opt ? (isAssembled ? 'btn-green' : 'btn-primary') : 'btn-outline'}`}
+                      className={`btn btn-sm ${placedSlots[sIdx] === opt ? (isAssembled ? 'btn-green' : 'btn-primary') : 'btn-outline'}`}
                       style={{ padding: '3px 12px', minHeight: '30px', fontFamily: 'monospace', fontWeight: 800 }}
                       onClick={() => handleSlotSelect(sIdx, opt)}
                       disabled={isAssembled}
@@ -230,10 +230,10 @@ export default function BuildTheCaseFile({ onComplete, audioEnabled }) {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <button className="btn-outline btn-sm" onClick={handleResetSlots} disabled={!placedSlots.some(Boolean)}>
+            <button className="btn btn-outline btn-sm" onClick={handleResetSlots} disabled={!placedSlots.some(Boolean)}>
               🔄 Reset Slots
             </button>
-            <button className="btn-outline btn-sm" onClick={nextCase}>
+            <button className="btn btn-outline btn-sm" onClick={nextCase}>
               Next Scenario ➔
             </button>
           </div>
@@ -320,7 +320,7 @@ export default function BuildTheCaseFile({ onComplete, audioEnabled }) {
                     <button
                       key={opt}
                       type="button"
-                      className={`btn-sm ${solvedX === opt ? (opt === scenario.correctX ? 'btn-green' : 'btn-outline') : 'btn-outline'}`}
+                      className={`btn btn-sm ${solvedX === opt ? (opt === scenario.correctX ? 'btn-green' : 'btn-outline') : 'btn-outline'}`}
                       style={{
                         padding: '10px 0',
                         fontSize: '1.05rem',
@@ -370,10 +370,10 @@ export default function BuildTheCaseFile({ onComplete, audioEnabled }) {
               </div>
 
               <div className="station-success-actions">
-                <button className="btn-primary" onClick={nextCase}>
+                <button className="btn btn-primary" onClick={nextCase}>
                   Try Another Case
                 </button>
-                <button className="btn-green" onClick={onComplete}>
+                <button className="btn btn-green" onClick={onComplete}>
                   Complete Station ✓
                 </button>
               </div>

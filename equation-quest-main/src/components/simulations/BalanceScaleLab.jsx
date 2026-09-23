@@ -223,7 +223,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
               <div style={{ display: 'flex', gap: '6px' }}>
                 <button
                   type="button"
-                  className={`btn-sm ${selectedOp === 'sub' ? 'btn-primary' : 'btn-outline'}`}
+                  className={`btn btn-sm ${selectedOp === 'sub' ? 'btn-primary' : 'btn-outline'}`}
                   style={{ padding: '2px 10px', minHeight: '28px' }}
                   onClick={() => setSelectedOp('sub')}
                 >
@@ -231,7 +231,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
                 </button>
                 <button
                   type="button"
-                  className={`btn-sm ${selectedOp === 'add' ? 'btn-primary' : 'btn-outline'}`}
+                  className={`btn btn-sm ${selectedOp === 'add' ? 'btn-primary' : 'btn-outline'}`}
                   style={{ padding: '2px 10px', minHeight: '28px' }}
                   onClick={() => setSelectedOp('add')}
                 >
@@ -247,7 +247,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
                 <button
                   key={amt}
                   type="button"
-                  className={`btn-sm ${selectedVal === amt ? 'btn-green' : 'btn-outline'}`}
+                  className={`btn btn-sm ${selectedVal === amt ? 'btn-green' : 'btn-outline'}`}
                   style={{ flex: 1, minHeight: '28px', padding: '2px 0' }}
                   onClick={() => setSelectedVal(amt)}
                 >
@@ -263,7 +263,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr 1fr', gap: '6px' }}>
               <button
                 type="button"
-                className="btn-outline btn-sm"
+                className="btn btn-outline btn-sm"
                 style={{ fontSize: '0.82rem', padding: '6px 4px' }}
                 onClick={() => handleApply('left')}
                 title="Only apply to left pan"
@@ -272,7 +272,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
               </button>
               <button
                 type="button"
-                className="btn-primary btn-sm"
+                className="btn btn-primary btn-sm"
                 style={{ fontSize: '0.86rem', fontWeight: 800, padding: '6px 4px', borderColor: '#f59e0b' }}
                 onClick={() => handleApply('both')}
                 title="Balance Method: Apply to both pans!"
@@ -281,7 +281,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
               </button>
               <button
                 type="button"
-                className="btn-outline btn-sm"
+                className="btn btn-outline btn-sm"
                 style={{ fontSize: '0.82rem', padding: '6px 4px' }}
                 onClick={() => handleApply('right')}
                 title="Only apply to right pan"
@@ -292,10 +292,10 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <button className="btn-outline btn-sm" onClick={handleReset}>
+            <button className="btn btn-outline btn-sm" onClick={handleReset}>
               🔄 Reset Scale
             </button>
-            <button className="btn-outline btn-sm" onClick={nextProblem}>
+            <button className="btn btn-outline btn-sm" onClick={nextProblem}>
               Next Equation ➔
             </button>
           </div>
@@ -337,7 +337,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
               </div>
 
               <button
-                className="btn-primary"
+                className="btn btn-primary"
                 style={{ width: '100%', padding: '10px 0', fontWeight: 800 }}
                 onClick={() => setShowQuiz(true)}
               >
@@ -382,7 +382,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
                   <button
                     key={idx}
                     type="button"
-                    className={`btn-sm ${quizAnswer === idx ? (idx === 0 ? 'btn-green' : 'btn-outline') : 'btn-outline'}`}
+                    className={`btn btn-sm ${quizAnswer === idx ? (idx === 0 ? 'btn-green' : 'btn-outline') : 'btn-outline'}`}
                     style={{
                       textAlign: 'left',
                       padding: '8px 12px',
@@ -397,7 +397,7 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
                 ))}
               </div>
 
-              <button className="btn-outline btn-sm" onClick={() => setShowQuiz(false)}>
+              <button className="btn btn-outline btn-sm" onClick={() => setShowQuiz(false)}>
                 ← Back to Exploration
               </button>
             </div>
@@ -428,10 +428,10 @@ export default function BalanceScaleLab({ onComplete, audioEnabled }) {
               </div>
 
               <div className="station-success-actions">
-                <button className="btn-primary" onClick={nextProblem}>
+                <button className="btn btn-primary" onClick={nextProblem}>
                   Try Another Equation
                 </button>
-                <button className="btn-green" onClick={onComplete}>
+                <button className="btn btn-green" onClick={onComplete}>
                   Complete Station ✓
                 </button>
               </div>

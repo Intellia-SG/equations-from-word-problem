@@ -206,7 +206,7 @@ export default function SpotTheFakeClue({ onComplete, audioEnabled }) {
             <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>
               {lineFound ? '✅ Mistake line identified!' : 'Hover lines with magnifying glass to inspect'}
             </span>
-            <button className="btn-outline btn-sm" onClick={nextCase}>
+            <button className="btn btn-outline btn-sm" onClick={nextCase}>
               Next Suspect Case ➔
             </button>
           </div>
@@ -293,7 +293,7 @@ export default function SpotTheFakeClue({ onComplete, audioEnabled }) {
                     <button
                       key={fIdx}
                       type="button"
-                      className={`btn-sm ${selectedFix === fIdx ? (opt.isCorrect ? 'btn-green' : 'btn-outline') : 'btn-outline'}`}
+                      className={`btn btn-sm ${selectedFix === fIdx ? (opt.isCorrect ? 'btn-green' : 'btn-outline') : 'btn-outline'}`}
                       style={{
                         padding: '10px 12px',
                         textAlign: 'left',
@@ -344,10 +344,10 @@ export default function SpotTheFakeClue({ onComplete, audioEnabled }) {
               </div>
 
               <div className="station-success-actions">
-                <button className="btn-primary" onClick={nextCase}>
+                <button className="btn btn-primary" onClick={nextCase}>
                   Try Another Suspect
                 </button>
-                <button className="btn-green" onClick={onComplete}>
+                <button className="btn btn-green" onClick={onComplete}>
                   Complete Station ✓
                 </button>
               </div>

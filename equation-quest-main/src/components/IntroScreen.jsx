@@ -28,14 +28,14 @@ export default function IntroScreen({ state, dispatch }) {
     <div className="intro-wrap">
       {/* Top Badge */}
       <div className="intro-top-badge">
-        ✨ Singapore MOE Secondary 1 Mathematics · Equations from Word Problems
+        ✨ Curriculum · Singapore MOE Sec 1 · Equations from Word Problems
       </div>
 
       {/* Main Title */}
       <h1 className="intro-title">
         <span className="text-orange">Equation</span> <span className="text-white">Quest</span>
       </h1>
-      <h2 className="intro-subtitle">EquationQuest · Translate Clues, Form Linear Equations &amp; Balance to Find x</h2>
+      <h2 className="intro-subtitle">EquationQuest · Master Linear Equations, Balancing &amp; Word Problems</h2>
 
       {/* Mascot Row */}
       <div className="intro-mascot-row">
@@ -47,7 +47,7 @@ export default function IntroScreen({ state, dispatch }) {
 
       {/* Description */}
       <p className="intro-desc">
-        Learn to translate real-world mystery scenarios into linear equations in one variable, balance both sides to isolate the unknown, and verify solutions like a chief detective!
+        Learn how to translate word problems into linear equations, balance both sides to isolate the unknown, and solve cases like a chief detective!
       </p>
 
       {/* Journey Card */}
@@ -55,34 +55,57 @@ export default function IntroScreen({ state, dispatch }) {
         <div className="journey-card-title">YOUR LEARNING JOURNEY · CLICK ANY PHASE TO START</div>
 
         <div className="journey-steps-container">
-          {JOURNEY.map((j, i) => (
-            <React.Fragment key={j.num}>
-              <div
-                className="journey-step-item clickable-step"
-                onClick={() => dispatch({ type: 'SET_PHASE', payload: j.label.toLowerCase() === 'practice' ? 'play' : j.label.toLowerCase() })}
-                role="button"
-                tabIndex={0}
-                title={`Click to open ${j.label} phase`}
-              >
-                <span className="journey-icon-circle">{j.icon}</span>
-                <div className="journey-text-col">
-                  <span className="journey-item-title">{j.label}</span>
-                  <span className="journey-item-desc">{j.desc}</span>
+          <div className="journey-row top-row">
+            {JOURNEY.slice(0, 3).map((j, i) => (
+              <React.Fragment key={j.num}>
+                <div
+                  className="journey-step-item clickable-step"
+                  onClick={() => dispatch({ type: 'SET_PHASE', payload: j.label.toLowerCase() === 'practice' ? 'play' : j.label.toLowerCase() })}
+                  role="button"
+                  tabIndex={0}
+                  title={`Click to open ${j.label} phase`}
+                >
+                  <span className="journey-icon-circle">{j.icon}</span>
+                  <div className="journey-text-col">
+                    <span className="journey-item-title">{j.label}</span>
+                    <span className="journey-item-desc">{j.desc}</span>
+                  </div>
                 </div>
-              </div>
-              {i < JOURNEY.length - 1 && <span className="journey-arrow">→</span>}
-            </React.Fragment>
-          ))}
+                <span className={`journey-arrow ${i === 2 ? 'fade-arrow' : ''}`}>→</span>
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className="journey-row bottom-row">
+            {JOURNEY.slice(3, 5).map((j, i) => (
+              <React.Fragment key={j.num}>
+                <div
+                  className="journey-step-item clickable-step"
+                  onClick={() => dispatch({ type: 'SET_PHASE', payload: j.label.toLowerCase() === 'practice' ? 'play' : j.label.toLowerCase() })}
+                  role="button"
+                  tabIndex={0}
+                  title={`Click to open ${j.label} phase`}
+                >
+                  <span className="journey-icon-circle">{j.icon}</span>
+                  <div className="journey-text-col">
+                    <span className="journey-item-title">{j.label}</span>
+                    <span className="journey-item-desc">{j.desc}</span>
+                  </div>
+                </div>
+                {i === 0 && <span className="journey-arrow">→</span>}
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Actions */}
       <div className="intro-ctas">
-        <button className="btn btn-primary intro-cta-main" onClick={startFresh}>
-          🚀 Begin Investigation!
+        <button className="btn btn-primary btn-lg intro-cta-main" onClick={startFresh}>
+          🚀 Begin Your Journey!
         </button>
         {hasSaved && (
-          <button className="btn btn-outline" onClick={resumeSession}>
+          <button className="btn btn-outline" onClick={resumeSession} style={{ marginTop: '6px' }}>
             ↩ Resume Session
           </button>
         )}
@@ -91,16 +114,16 @@ export default function IntroScreen({ state, dispatch }) {
       {/* Bottom Cards */}
       <div className="intro-bottom-cards">
         <div className="bottom-card">
-          <span className="bottom-card-icon" style={{ color: '#ff6b6b' }}>🎯</span>
-          <span className="bottom-card-text">100 Questions</span>
+          <div className="bottom-card-icon" style={{ color: '#ff6b6b' }}>🎯</div>
+          <div>100 Questions</div>
         </div>
         <div className="bottom-card">
-          <span className="bottom-card-icon" style={{ color: '#feca57' }}>⚖️</span>
-          <span className="bottom-card-text">Balance Method</span>
+          <div className="bottom-card-icon" style={{ color: '#feca57' }}>⚖️</div>
+          <div>Balance Method</div>
         </div>
         <div className="bottom-card">
-          <span className="bottom-card-icon" style={{ color: '#66bb6a' }}>✨</span>
-          <span className="bottom-card-text">Badges &amp; XP</span>
+          <div className="bottom-card-icon" style={{ color: '#66bb6a' }}>✨</div>
+          <div>Badges &amp; XP</div>
         </div>
       </div>
     </div>

@@ -217,7 +217,7 @@ export default function CrackTheCombination({ onComplete, audioEnabled }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <button
                 type="button"
-                className="btn-outline btn-sm"
+                className="btn btn-outline btn-sm"
                 style={{ minWidth: '40px', minHeight: '36px', fontSize: '1.2rem', fontWeight: 900 }}
                 onClick={() => updateX(xVal - 1)}
                 disabled={xVal <= round.minX}
@@ -238,7 +238,7 @@ export default function CrackTheCombination({ onComplete, audioEnabled }) {
 
               <button
                 type="button"
-                className="btn-outline btn-sm"
+                className="btn btn-outline btn-sm"
                 style={{ minWidth: '40px', minHeight: '36px', fontSize: '1.2rem', fontWeight: 900 }}
                 onClick={() => updateX(xVal + 1)}
                 disabled={xVal >= round.maxX}
@@ -281,10 +281,10 @@ export default function CrackTheCombination({ onComplete, audioEnabled }) {
               </div>
 
               <div className="station-success-actions">
-                <button className="btn-primary" onClick={nextRound}>
+                <button className="btn btn-primary" onClick={nextRound}>
                   Try Next Safe
                 </button>
-                <button className="btn-green" onClick={onComplete}>
+                <button className="btn btn-green" onClick={onComplete}>
                   Complete Station ✓
                 </button>
               </div>
