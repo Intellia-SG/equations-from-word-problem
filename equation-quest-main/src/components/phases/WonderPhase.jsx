@@ -68,4 +68,9 @@ export default function WonderPhase({ state, dispatch }) {
 
           <button className="btn btn-primary btn-lg wonder-cta" onClick={handleInvestigate}>
             Start Investigation 🔍
-          </bu
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
